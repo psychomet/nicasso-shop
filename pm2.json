@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "nicasso-shop",
+      "script": "npm",
+      "args" : "start"
+    }
+  ]
+}
