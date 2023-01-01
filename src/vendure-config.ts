@@ -2,7 +2,7 @@ import {
     dummyPaymentHandler,
     DefaultJobQueuePlugin,
     DefaultSearchPlugin,
-    VendureConfig,
+    VendureConfig, LanguageCode,
 } from '@vendure/core';
 import { defaultEmailHandlers, EmailPlugin } from '@vendure/email-plugin';
 import { AssetServerPlugin } from '@vendure/asset-server-plugin';
@@ -13,6 +13,7 @@ import path from 'path';
 const IS_DEV = process.env.APP_ENV === 'dev';
 
 export const config: VendureConfig = {
+    defaultLanguageCode: LanguageCode.fa,
     apiOptions: {
         port: 3000,
         adminApiPath: 'admin-api',
@@ -82,9 +83,9 @@ export const config: VendureConfig = {
                 // The following variables will change depending on your storefront implementation.
                 // Here we are assuming a storefront running at http://localhost:8080.
                 fromAddress: '"example" <noreply@example.com>',
-                verifyEmailAddressUrl: 'http://localhost:8080/verify',
-                passwordResetUrl: 'http://localhost:8080/password-reset',
-                changeEmailAddressUrl: 'http://localhost:8080/verify-email-address-change'
+                verifyEmailAddressUrl: 'http://185.206.93.60:4000/account/verify',
+                passwordResetUrl: 'http://185.206.93.60:4000/account/password-reset',
+                changeEmailAddressUrl: 'http://185.206.93.60:4000/account/verify-email-address-change'
             },
         }),
         AdminUiPlugin.init({
